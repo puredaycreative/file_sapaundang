@@ -18,6 +18,8 @@ lerna-debug.log*
 .env.production.local
 server.js
 view.js
+serverkhitan.js
+viewkhitan.js
 
 # OS Metadata (Mac & Windows)
 .DS_Store
