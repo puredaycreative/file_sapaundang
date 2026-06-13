@@ -9,6 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>SapaUndang: {{nama_wanita}} {{nama_pria}} </title>
+    <link href="https://fonts.googleapis.com/css?family=Aladin" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Rouge+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina+2" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&family=Great+Vibes&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
@@ -117,7 +118,7 @@
 .subtitle-top {
     font-size: 0.75rem;
     letter-spacing: 3px;
-    color: #b7ab9d;
+    color: #605548;
     text-transform: uppercase;
      text-align: center;
 }
@@ -125,7 +126,7 @@
 .main-title {
       font-family: 'Bilbo Swash Caps', cursive;
     font-size: 2.4rem;
-    color: #b7ab9d;
+    color: #605548;
     margin: 10px 0 20px;
      text-align: center;
 }
@@ -550,9 +551,19 @@
     padding: 0 30px;
     box-sizing: border-box;
 }
+.more-title {
+    font-family: 'Aladin', cursive;
+    color: #000000;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    text-align: center;
+    
+    /* Ubah angka ini (misal dari 20px menjadi 40px) */
+    padding-top: 150px; 
+}
 
 .guest-label {
-    color: #847665;
+    color: #605548;
     font-size: 1.1rem;
     font-family: Andada, serif;
     margin-top: 30px;
@@ -560,7 +571,7 @@
 
 .template-cover-guest-name {
      font-family: Andada, serif;
-    color: #847665;
+    color: #605548;
     font-size: 0.9rem;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -571,22 +582,22 @@
 
 .template-cover-title {
    font-family: 'Rouge Script', cursive;
-    font-size: 3.5rem;
-    color: #847665;
+    font-size: 2.0rem;
+    color: #605548;
     margin: 10px 0;
     font-weight: 300;
     margin-top: 0px;
 }
 
 .event-date {
-    color: #847665;
+    color: #605548;
     margin-top: 5px;
     font-family: Andada, serif;
 }
 
 /* --- TOMBOL OPEN --- */
 .cover-open-btn {
-    background-color: #847665;
+    background-color: #605548;
     color: #dee6ee;
     border: none;
     padding: 5px 30px;
@@ -601,7 +612,7 @@
 
 .cover-open-btn:hover {
     transform: translateY(-3px) scale(1.05);
-    background-color: #b7ab9d;
+    background-color: #9b9185;
 }
 
 
@@ -784,7 +795,7 @@ body {
 
 .wedding-title {
      font-family: Andada, serif;
-     color: #847665;
+     color: #605548;
       font-size: 0.7rem;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -797,7 +808,7 @@ body {
     line-height: 1.2;    /* Mengatur kerapatan baris agar tidak terlalu renggang */
  font-size: 3rem;
     font-family: 'Rouge Script', cursive;
-    color: #847665;
+    color: #605548;
 }
 
 
@@ -874,14 +885,39 @@ body {
 
 /* Kontainer Utama (Bentuk Arch Atas-Bawah) */
 .content-detail-wrapper {
-   background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg2.jpg");
+   background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg3.jpg");
     width: 92%; /* Memberi sedikit jarak di layar mobile */
     max-width: 420px; 
     padding: 100px 25px; /* Kurangi padding samping jika foto terasa terlalu kecil */
-    border: 1.5px solid #847665;
+    border: 1.5px solid #605548;
     border-radius: 300px; /* Tetap melengkung atas dan bawah */
     margin: 0 auto;
     box-sizing: border-box;
+}
+
+.card-image-wrapper-cover {
+    /* Gunakan % agar lebar foto selalu proporsional dengan lebar kontainer */
+    width: auto; 
+    max-width: 150px; /* Ukuran maksimal di layar besar/MacBook M2 */
+    
+    /* Gunakan aspect-ratio agar bentuk oval tetap konsisten */
+    aspect-ratio: 2 / 3; 
+  
+    margin: 0 auto 0px;
+    border: 2px solid #605548;
+    border-radius: 150px; /* Membuat bentuk oval sempurna */
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Pastikan gambar di dalamnya memenuhi bingkai tanpa distorsi */
+.couple-img-cover {
+      padding-top: -50px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 
@@ -895,7 +931,7 @@ body {
     aspect-ratio: 2 / 3; 
     
     margin: 0 auto 20px;
-    border: 2px solid #847665;
+    border: 2px solid #605548;
     border-radius: 150px; /* Membuat bentuk oval sempurna */
     overflow: hidden;
     position: relative;
@@ -932,7 +968,7 @@ body {
 .card-name {
     font-family: 'Rouge Script', cursive;
     font-size: 2.2rem;
-    color: #847665;
+    color: #605548;
     margin: 10px 0;
     font-weight: 400;
 }
@@ -959,7 +995,7 @@ body {
 .ampersand-text {
     font-family: 'Rouge Script', cursive;
     font-size: 48px;
-    color: #847665;
+    color: #605548;
     font-style: italic;
 }
 
@@ -976,7 +1012,7 @@ body {
     display: block;
     margin-top: 8px;
     font-weight: bold;
-    color: #847665;
+    color: #605548;
      text-align: center;
 }
 
@@ -1001,7 +1037,7 @@ body {
     min-height: 100vh;
     /* KUNCI TENGAH: margin auto kiri dan kanan */
     margin: 0 auto; 
-     background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg2.jpg");
+     background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg.jpg");
     box-shadow: 0 0 30px rgba(0,0,0,0.1);
     overflow: hidden;
     padding: 80px 20px;
@@ -1031,7 +1067,7 @@ body {
     width: 75px;
     height: 75px;
     background: rgba(255, 255, 255, 0.2); /* Memberikan sedikit kontras transparan */
-    border: 1px dashed #b7ab9d;
+    border: 1px dashed #605548;
     border-radius: 50%; 
     display: flex;
     flex-direction: column;
@@ -1049,7 +1085,7 @@ body {
     font-size: 1.4rem; /* Sedikit lebih besar agar mudah dibaca */
     font-weight: bold;
     margin: 0;
-    color: #b7ab9d; /* Putih agar kontras dengan background krem emas */
+    color: #605548; /* Putih agar kontras dengan background krem emas */
     line-height: 1;
 }
 
@@ -1057,7 +1093,7 @@ body {
     font-family: Andada, serif;
     font-size: 0.75rem;
     margin: 0;
-    color: #b7ab9d;
+    color: #605548;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -1068,7 +1104,7 @@ body {
 /* --- Container Utama --- */
 /* --- Perbaikan Container Utama --- */
 .section-event {
-    background-color: #b7ab9d01;
+    background-color: #60554801;
     padding: 80px 0;
     text-align: center;
     color: #ffffff;
@@ -1099,8 +1135,8 @@ body {
       margin-left: auto;
     margin-right: auto;
 
- background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg2.jpg");
-    border: 2px solid #847665;
+ background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg3.jpg");
+    border: 2px solid #605548;
     border-radius: 300px;
     overflow: hidden;
     padding: 12px;
@@ -1155,7 +1191,7 @@ body {
 /* --- TOMBOL MAPS --- */
 .btn-maps-link {
     font-family: Andada, serif;
-    background-color: #847665;
+    background-color: #605548;
     color: #dee6ee;
     text-decoration: none;
     padding: 10px 25px;
@@ -1166,7 +1202,7 @@ body {
 }
 
 .btn-maps-link:hover {
-    background-color: #b7ab9d;
+    background-color: #9b9185;
     color: #dee6ee;
 }
 
@@ -1587,7 +1623,7 @@ max-width: 450px;
     margin-top: 50px; /* Ubah angka px sesuai keinginan Anda */
           margin-bottom: 50px;
     background-image: url("https://file.sapaundang.my.id/adatcoklatcream/bg.png");
-    border: 2px solid #847665;
+    border: 2px solid #605548;
     border-radius: 20px; 
     overflow: hidden;
     padding: 12px;
@@ -1868,7 +1904,7 @@ max-width: 450px;
     bottom: 0;
     
     /* 2. PINDAHKAN gambarnya ke sini */
-    background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg.jpg");
+    background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg2.jpg");
     background-size: cover;
     background-position: center;
     
@@ -1931,7 +1967,7 @@ max-width: 450px;
     padding: 10px;
     border: none;
     border-radius: 8px;
-    background: #b7ab9d;
+    background: #9b9185;
     color: rgb(255, 255, 255);
     cursor: pointer;
     font-size: 0.85rem;
@@ -1941,7 +1977,7 @@ max-width: 450px;
 }
 
 .template-status-btn.status-active {
-    background: #847665; /* Warna coklat tema */
+    background: #605548; /* Warna coklat tema */
     color: rgb(255, 255, 255);
     font-family: Andada, serif;
     
@@ -1952,7 +1988,7 @@ max-width: 450px;
 .btn-submit {
     width: 100%;
     padding: 15px;
-    background-color: #847665; /* Sesuai gambar referensi */
+    background-color: #605548; /* Sesuai gambar referensi */
     color: #dee6ee;
     border: none;
     font-family: Andada, serif;
@@ -1971,7 +2007,7 @@ max-width: 450px;
 }
 
 .btn-submit:hover {
-    background-color: #b7ab9d;
+    background-color: #605548;
     transform: translateY(-2px);
 }
 
@@ -2361,10 +2397,14 @@ background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg.jpg
 
     <div class="template-cover-content-wrapper animate-down">
         <div class="pureday-content-locker">
-              <h1 class="wedding-title animate-left">Undangan</h1>
-              <h1 class="more-title animate-left">{{nama_wanita}}</h1><br>
+
+              <h1 class="more-title animate-left">{{nama_wanita}}</h1>
          
-            <h1 class="template-cover-title">{{nama_pria_lengkap}} <br> 
+           
+              <div class="card-image-wrapper-cover">
+                   <img src="{{cover}}" alt="cover" class="couple-img-cover">
+                </div>
+                 <h1 class="template-cover-title">{{nama_pria_lengkap}} 
                 <!-- & <br>{{nama_wanita}} -->
             </h1>
                <p class="guest-label">Kepada Yth:</p>
@@ -2525,7 +2565,7 @@ background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg.jpg
     
     <div class="gift-container animate-left">
         <br>
-        <p class="subtitle-top2">WEDDING GIFT</p>
+        <!-- <p class="subtitle-top2">WEDDING GIFT</p> -->
         <h2 class="main-title2 font-cursive">Amplop Digital</h2>
 
         <p class="gift-text">
@@ -3091,8 +3131,8 @@ function updateMusicIcon(isPlaying) {
         }
         
         // Warna merah (aktif) jika sedang play
-        floatingMusicToggle.style.color = isPlaying ? '#847665' : '#847665';
-        floatingMusicToggle.style.borderColor = isPlaying ? '#847665' : '#847665';
+        floatingMusicToggle.style.color = isPlaying ? '#605548' : '#605548';
+        floatingMusicToggle.style.borderColor = isPlaying ? '#605548' : '#605548';
     }
 }
 
