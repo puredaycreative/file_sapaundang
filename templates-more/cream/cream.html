@@ -482,7 +482,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("https://file.sapaundang.my.id/templates/basiccream/cover.jpg");
+    background-image: url("https://file.sapaundang.my.id/templates-more/cream/cover.jpg");
     background-size: cover;
     background-position: center;
     transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
@@ -652,7 +652,7 @@ body::before {
     width: 100%;
     height: 100%;
     max-width: 450px; /* Lebar maksimal mengikuti layout undangan */
-    background-image: url("https://file.sapaundang.my.id/templates/basiccream/bg.jpg") !important;
+    background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg.jpg") !important;
     background-attachment: scroll; /* Tetap scroll karena container-nya sudah fixed */
     background-position: center;
     background-repeat: no-repeat;
@@ -874,7 +874,7 @@ body {
 
 /* Kontainer Utama (Bentuk Arch Atas-Bawah) */
 .content-detail-wrapper {
-   background-image: url("https://file.sapaundang.my.id/templates/basiccream/bg2.jpg");
+   background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg2.jpg");
     width: 92%; /* Memberi sedikit jarak di layar mobile */
     max-width: 420px; 
     padding: 100px 25px; /* Kurangi padding samping jika foto terasa terlalu kecil */
@@ -1001,7 +1001,7 @@ body {
     min-height: 100vh;
     /* KUNCI TENGAH: margin auto kiri dan kanan */
     margin: 0 auto; 
-     background-image: url("https://file.sapaundang.my.id/templates/basiccream/bg2.jpg");
+     background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg2.jpg");
     box-shadow: 0 0 30px rgba(0,0,0,0.1);
     overflow: hidden;
     padding: 80px 20px;
@@ -1099,7 +1099,7 @@ body {
       margin-left: auto;
     margin-right: auto;
 
- background-image: url("https://file.sapaundang.my.id/templates/basiccream/bg2.jpg");
+ background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg2.jpg");
     border: 2px solid #847665;
     border-radius: 300px;
     overflow: hidden;
@@ -1362,7 +1362,7 @@ body {
 /* --- Container Galeri --- */
 .section-gallery {
     padding: 60px 15px;
-   background-image: url("https://file.sapaundang.my.id/templates/basiccream/bg2.jpg");
+   background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg2.jpg");
     background-size: cover;
     min-height: 80vh;
 }
@@ -1407,7 +1407,7 @@ body {
 
 /* --- Love Story Section --- */
 .section-love-story {
-    background-image: url("https://file.sapaundang.my.id/templates/basiccream/bg3.jpg");
+    background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg3.jpg");
    padding: 60px 16px;
     font-family: Andada, serif;
     display: flex;
@@ -1868,7 +1868,7 @@ max-width: 450px;
     bottom: 0;
     
     /* 2. PINDAHKAN gambarnya ke sini */
-    background-image: url("https://file.sapaundang.my.id/templates/basiccream/bg.jpg");
+    background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg.jpg");
     background-size: cover;
     background-position: center;
     
@@ -2009,7 +2009,7 @@ max-width: 450px;
     margin-left: auto;
     margin-right: 0;
      background-size: cover;
-background-image: url("https://file.sapaundang.my.id/templates/basiccream/bg.jpg");
+background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg.jpg");
     overflow: hidden; 
     padding: 80px 20px 0 20px;
     box-sizing: border-box;
@@ -2139,7 +2139,7 @@ background-image: url("https://file.sapaundang.my.id/templates/basiccream/bg.jpg
 /* Styling Section Penutup */
 .section-closing {
     padding: 60px 0px;
-   background-image: url("https://file.sapaundang.my.id/templates/basiccream/bg2.jpg");
+   background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg2.jpg");
    background-size: cover;
 
     background-repeat: no-repeat;
@@ -2361,10 +2361,14 @@ background-image: url("https://file.sapaundang.my.id/templates/basiccream/bg.jpg
 
     <div class="template-cover-content-wrapper animate-down">
         <div class="pureday-content-locker">
-            <p class="guest-label">Kepada Yth:</p>
+              <h1 class="wedding-title animate-left">Undangan</h1>
+              <h1 class="more-title animate-left">{{nama_wanita}}</h1><br>
+         
+            <h1 class="template-cover-title">{{nama_pria_lengkap}} <br> 
+                <!-- & <br>{{nama_wanita}} -->
+            </h1>
+               <p class="guest-label">Kepada Yth:</p>
             <h3 class="template-cover-guest-name" id="guest-name-display">TAMU UNDANGAN</h3>
-            <h1 class="template-cover-title">{{nama_pria}} <br> 
-                & <br>{{nama_wanita}}</h1>
             <p class="event-date">{{tanggal_acara_baca}}</p>
             <button id="open-invitation-btn" class="cover-open-btn">Buka</button>
         </div>
@@ -2380,23 +2384,23 @@ background-image: url("https://file.sapaundang.my.id/templates/basiccream/bg.jpg
 
 <section class="section section-detail">
     <div class="content-detail-wrapper">
-           <h4 class="salam-closing animate-left">
+         <h4 class="salam-closing animate-left">
             Assalamu'alaikum Wr. Wb.
         </h4>
         
-        <p class="quote-opening">
-            Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i serta kerabat sekalian untuk menghadiri acara pernikahan kami.
+        <p class="quote-opening animate-left">
+            Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i serta kerabat sekalian untuk menghadiri acara {{nama_wanita}}.
         </p>
 
         <div class="couple-cards">
             <!-- Kartu Pria -->
             <div class="card">
-                <div class="card-image-wrapper">
+                <div class="card-image-wrapper animate-left">
                     <img src="{{foto_pria}}" alt="Foto Pria" class="couple-img">
                 </div>
-                <h3 class="card-name">{{nama_pria_lengkap}}</h3>
-                <p class="parent-info">Putra dari Bapak {{nama_bapak_pria}} & Ibu {{nama_ibu_pria}}</p>
-                <p class="address-info">{{alamat_pria}}</p>
+                <h3 class="card-name animate-left">{{nama_pria_lengkap}}({{nama_pria}})</h3>
+                <p class="parent-info animate-left">Putra dari Bapak {{nama_bapak_pria}} & Ibu {{nama_ibu_pria}}</p>
+                <p class="address-info animate-left">{{alamat_pria}}</p>
 <a id="instagram-link-pria" 
    href="https://www.instagram.com/{{ig_pria}}" 
    target="_blank" 
@@ -2411,18 +2415,18 @@ background-image: url("https://file.sapaundang.my.id/templates/basiccream/bg.jpg
             </div>
 
             <!-- Ampersand / Pembatas -->
-            <div class="ampersand-divider">
-                <h2 class="ampersand-text">&</h2>
+            <div class="ampersand-divider animate-left">
+                <!-- <h2 class="ampersand-text">&</h2> -->
             </div>
 
             <!-- Kartu Wanita -->
             <div class="card">
-                <div class="card-image-wrapper">
+                <div class="card-image-wrapper animate-left">
                     <img src="{{foto_wanita}}" alt="Foto Wanita" class="couple-img">
                 </div>
-                <h3 class="card-name">{{nama_wanita_lengkap}}</h3>
-                <p class="parent-info">Putri dari Bapak {{nama_bapak_wanita}} & Ibu {{nama_ibu_wanita}}</p>
-                <p class="address-info">{{alamat_wanita}}</p>
+                <!-- <h3 class="card-name animate-left">{{nama_wanita_lengkap}}</h3>
+                <p class="parent-info animate-left">Putri dari Bapak {{nama_bapak_wanita}} & Ibu {{nama_ibu_wanita}}</p>
+                <p class="address-info animate-left">{{alamat_wanita}}</p> -->
 <a id="instagram-link-wanita" 
    href="https://www.instagram.com/{{ig_wanita}}" 
    target="_blank" 
@@ -2451,21 +2455,20 @@ background-image: url("https://file.sapaundang.my.id/templates/basiccream/bg.jpg
             </div>
         </div>
 
-        <p class="quote-closing">
+        <!-- <p class="quote-closing animate-left">
             "Segala sesuatu Kami ciptakan berpasang-pasangan agar kamu mengingat (kebesaran Allah)."<br>
             <span>— QS Adz-Dzariyat: 49</span>
-        </p>
+        </p> -->
         
     </div>
 </section>
 
 
 
-
-   <section id="event-section-id-timer" class="section section-event-timer">
+  <section id="event-section-id-timer" class="section section-event-timer">
     <div >
         <p class="subtitle-top animate-left">Our Special</p>
-        <h2 class="main-title font-cursive animate-left">Wedding Event</h2>
+        <h2 class="main-title font-cursive animate-left">{{nama_wanita}}</h2>
 
         <div id="countdown-timer">
             <div class="time-box animate-left"><p id="days" class="time-number">00</p><p class="time-label">Hari</p></div>
@@ -2608,7 +2611,7 @@ background-image: url("https://file.sapaundang.my.id/templates/basiccream/bg.jpg
       
 
         <p class="thanks-statement animate-left">
-          Kehadiran Bapak/Ibu/Saudara sekalian merupakan kebahagiaan tersendiri bagi kami. Terima kasih atas kesediaannya meluangkan waktu serta memberikan doa restu bagi pernikahan kami.
+       Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do'a restu kepada kami
         </p>
 
         <h4 class="salam-closing animate-left">
@@ -2617,7 +2620,7 @@ background-image: url("https://file.sapaundang.my.id/templates/basiccream/bg.jpg
 
         <div class="signature-wrapper animate-left">
             <p class="regards-text">Yang Berbahagia</p>
-            <h2 class="couple-nickname">{{nama_pria}}  &  {{nama_wanita}}</h2>
+            <h2 class="couple-nickname">{{nama_bapak_pria}}  <br>& <br> {{nama_ibu_pria}}</h2>
         </div>
 
     </div>
