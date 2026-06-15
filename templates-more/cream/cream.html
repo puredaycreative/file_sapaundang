@@ -879,7 +879,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 80px 15px;
+    padding: 30px 15px;
     background: transparent; /* Biar tembus ke background body */
 }
 
@@ -967,10 +967,18 @@ body {
 /* Typography (Nama & Ortu) */
 .card-name {
     font-family: 'Rouge Script', cursive;
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: #605548;
-    margin: 10px 0;
     font-weight: 400;
+    
+    /* Mengatur jarak antar baris agar tidak bertumpuk */
+    line-height: 1.8; 
+    
+    /* Opsional: Jika Anda ingin jarak ekstra antar nama */
+
+    
+    /* Memastikan teks berada di tengah */
+    text-align: center;
 }
 
 .parent-info {
@@ -2373,7 +2381,7 @@ background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg.jpg
             flex-direction: row;
         }
         .card {
-            width: 45%;
+            width: 100%;
         }
     }
     
@@ -2503,23 +2511,6 @@ background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg.jpg
     </div>
 </section>
 
-
-
-  <section id="event-section-id-timer" class="section section-event-timer">
-    <div >
-        <p class="subtitle-top animate-left">Our Special</p>
-        <h2 class="main-title font-cursive animate-left">{{nama_wanita}}</h2>
-
-        <div id="countdown-timer">
-            <div class="time-box animate-left"><p id="days" class="time-number">00</p><p class="time-label">Hari</p></div>
-            <div class="time-box animate-left"><p id="hours" class="time-number">00</p><p class="time-label">Jam</p></div>
-            <div class="time-box animate-left"><p id="minutes" class="time-number">00</p><p class="time-label">Menit</p></div>
-            <div class="time-box animate-left"><p id="seconds" class="time-number">00</p><p class="time-label">Detik</p></div>
-        </div>
-
-       </div>
-       </section> 
-
 <section id="event-section-id" class="section section-event">
   
     <div class="event-container">
@@ -2537,6 +2528,23 @@ background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg.jpg
     </div>
  
 </section>
+
+  <section id="event-section-id-timer" class="section section-event-timer">
+    <div >
+        <p class="subtitle-top animate-left">Our Special</p>
+        <h2 class="main-title font-cursive animate-left">{{nama_wanita}}</h2>
+
+        <div id="countdown-timer">
+            <div class="time-box animate-left"><p id="days" class="time-number">00</p><p class="time-label">Hari</p></div>
+            <div class="time-box animate-left"><p id="hours" class="time-number">00</p><p class="time-label">Jam</p></div>
+            <div class="time-box animate-left"><p id="minutes" class="time-number">00</p><p class="time-label">Menit</p></div>
+            <div class="time-box animate-left"><p id="seconds" class="time-number">00</p><p class="time-label">Detik</p></div>
+        </div>
+
+       </div>
+       </section> 
+
+
 
     <section id="gallery-section-id" class="section-gallery">
     <div class="gallery-container animate-left">
