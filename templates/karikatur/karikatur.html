@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Pureday Invitation: {{nama_pria}} & {{nama_wanita}}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&family=Great+Vibes&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+<style>
+    /* ==================================== */
+/* 🎨 TEMA: KARIKATUR CERIA (FULL CSS)  */
+/* FOKUS: PRESISI TATA LETAK & RESPONSIVITAS */
+/* ==================================== */
+
+/* --- 0. Variabel Warna dan Font --- */
+:root {
+    /* Warna Dasar */
+    --primary-color: #FF6B6B;      /* Merah cerah/Coral untuk Aksi */
+    --secondary-color: #4ECDC4;    /* Cyan/Turquoise untuk Aksen */
+    --background-color: #FFFBE6;   /* Kuning Pucat/Creamy untuk Latar */
+    --text-dark: #333333;          /* Hitam pekat */
+    --text-light: #3a3a3a;          /* Abu-abu tua */
+
+    /* Warna Elemen Khusus */
+    --card-background: #FFFFFF;
+    --countdown-bg: #FFE66D;       /* Kuning terang */
+    --netflix-red: var(--primary-color); /* Override variable lama */
+    --netflix-grey: var(--text-light);   /* Override variable lama */
+
+    /* Font Pilihan (Asumsi sudah diimpor) */
+    --font-heading: 'Comic Sans MS'; 
+    --font-body: 'Poppins', 'Comic Sans MS', sans-serif; /* Poppins sebagai font utama modern, Comic Sans sebagai fallback fun */
+    --font-cursive: 'Pacifico', cursive;
+
+    /* Spasi Konsisten */
+    --section-padding: 60px 20px;
+}
+
+/* --- 1. Global Reset dan Tata Letak Dasar --- */
+* {
+    box-sizing: border-box; /* Kunci untuk tata letak yang presisi */
+}
+
+      #main-content {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 1.5s ease-in-out;
+        }
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden; /* Mencegah scroll horizontal */
+}
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px; 
+}
+.section {
+    padding: var(--section-padding);
+    text-align: center;
+}
+.detail-box {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- 2. Tipografi dan Heading --- */
+h1, h2, h3, .main-title, .title-wedding {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.font-cursive {
+    font-family: var(--font-cursive);
+    text-transform: none;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    text-shadow: 2px 2px 0px var(--primary-color); /* Efek komik */
+    line-height: 1.2;
+}
+.font-great-vibes { /* Digunakan untuk nama pasangan besar */
+    font-family: 'Great Vibes', cursive; 
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-shadow: 3px 3px 0px var(--secondary-color), -3px -3px 0px rgba(0,0,0,0.1);
+}
+.subtitle-top {
+    color: var(--secondary-color);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 15px;
+}
+p {
+    color: var(--text-light);
+}
+   .scroll-locked {
+            overflow: hidden;
+            height: 100vh;
+        }
+        
+/* --- 3. Cover Page --- */
+#cover-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    transition: opacity 1.5s ease-out;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color) 70%);
+}
+.template-cover-content-wrapper {
+    /* Menggunakan Flexbox untuk tata letak vertikal di tengah */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.template-cover-title {
+    color: var(--countdown-bg);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 2px 2px var(--text-dark);
+    margin: 0.5em 0;
+}
+.cover-open-btn {
+    background-color: var(--countdown-bg);
+    color: var(--text-dark);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 5px 0 var(--text-dark); /* Efek pop-out */
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+.cover-open-btn:active {
+    box-shadow: 0 2px 0 var(--text-dark);
+    transform: translateY(3px);
+}
+
+/* --- 4. Couple Section (Detail Pasangan) --- */
+.couple-image-container {
+    max-width: 300px; 
+    margin: 0 auto 20px;
+}
+.couple-image-container img {
+    width: 100%;
+    height: auto;
+    border: 5px solid var(--secondary-color) !important;
+    box-shadow: 8px 8px 0px var(--primary-color), 15px 15px 0px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 20px !important;
+}
+
+/* Card Detail Pasangan */
+.couple-cards {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 30px; 
+    margin-top: 40px;
+}
+.card {
+    flex: 1 1 300px; /* Fleksibel, min lebar 300px */
+    max-width: 45%; /* Maksimal 2 kartu per baris di desktop */
+    background: var(--card-background);
+    padding: 25px 15px;
+    border-radius: 15px;
+    border: 2px dashed var(--primary-color);
+    box-shadow: 5px 5px 0px var(--secondary-color);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.card.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+.card-image-wrapper {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+    overflow: hidden;
+border-radius: 45% 55% 50% 50% / 40% 60% 50% 50%; 
+    border: 3px solid var(--primary-color);
+}
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card-name {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin: 5px 0;
+}
+
+/* --- 5. Event Section --- */
+#countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px auto;
+    max-width: 400px; 
+    padding: 15px 10px;
+    border-radius: 10px;
+    border: 3px solid var(--primary-color);
+    box-shadow: 4px 4px 0px var(--text-dark);
+    background: var(--countdown-bg);
+}
+.time-box {
+    background-color: var(--primary-color);
+    color: var(--card-background);
+    padding: 10px 5px;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 50px;
+    border: 2px solid var(--text-dark);
+}
+.time-number {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    line-height: 1;
+    margin: 0;
+}
+.btn-maps-link {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--card-background);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+    box-shadow: 0 4px 0 var(--text-dark);
+    transition: all 0.1s ease;
+}
+.btn-maps-link:active {
+    box-shadow: 0 1px 0 var(--text-dark);
+    transform: translateY(3px);
+}
+
+/* --- 6. Gallery Section --- */
+.photo-slider-container {
+      position: relative;
+    max-width: 450px; 
+    margin: 30px auto;
+    overflow: hidden;
+    /* Teknik rasio aspek 1:1 */
+    padding-bottom: 100%; 
+    height: 0; 
+}
+.photo-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Tambahan: Pastikan tidak ada celah antar item flex */
+    line-height: 0; 
+    font-size: 0; 
+}
+.slider-item {
+    min-width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+.slider-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    padding: 10px;
+    border: none;
+    opacity: 0.8;
+}
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+/* --- 7. Gift Section (Kado) --- */
+.bank-accounts-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsif 1 atau 2 kolom */
+    gap: 20px;
+    margin-top: 30px;
+}
+.bank-card {
+    background: var(--card-background);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 3px 3px 0px var(--primary-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.bank-number {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin: 5px 0 10px;
+    word-break: break-all; 
+}
+.copy-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 0 3px 0 var(--text-dark);
+    transition: all 0.1s ease;
+}
+
+/* --- 8. Comments Section (Ucapan) --- */
+#comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+.form-group label {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    display: block;
+}
+.form-control, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px;
+    background-color: var(--card-background);
+    color: var(--text-dark);
+    resize: vertical;
+}
+.status-btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+.template-status-btn {
+    flex: 1; 
+    background-color: var(--card-background);
+    border: 2px solid var(--text-light);
+    color: var(--text-light);
+    border-radius: 20px;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.template-status-btn.status-active {
+    background-color: var(--secondary-color);
+    border-color: var(--primary-color);
+    color: var(--card-background);
+    box-shadow: 2px 2px 0px var(--primary-color);
+}
+.btn-submit {
+    background-color: var(--primary-color);
+    color: var(--card-background);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 5px 0 var(--text-dark);
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+.comments-list-container {
+    max-height: 400px; 
+    overflow-y: auto; 
+    padding: 15px;
+    margin-top: 15px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+    background-color: var(--card-background);
+    text-align: left;
+}
+.comment-card {
+    background: var(--countdown-bg);
+    border: 2px dashed var(--primary-color);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 3px 3px 0px var(--secondary-color);
+}
+.comment-name {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-family: var(--font-heading);
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* --- 9. Bottom Navigation (Fixed Navbar) --- */
+
+.bottom-nav-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 990;
+    background-color: var(--primary-color);
+    border-top: 3px solid var(--secondary-color);
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+}
+.bottom-nav-bar .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--card-background);
+    font-size: 0.7rem;
+    flex: 1;
+    height: 100%;
+    transition: color 0.3s, transform 0.3s;
+}
+.bottom-nav-bar .nav-item i {
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+}
+.bottom-nav-bar .nav-item.active {
+    color: var(--countdown-bg);
+    transform: scale(1.1);
+}
+
+/* --- 10. Music Toggle & Toast Message --- */
+#floating-music-toggle {
+    position: fixed;
+   top: 25px;
+    right: 20px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: var(--card-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 999;
+    border: 3px solid var(--secondary-color);
+    color: var(--primary-color);
+    box-shadow: 3px 3px 0px var(--text-dark);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    opacity: 0; /* Tersembunyi di awal */
+}
+#floating-music-toggle.visible {
+    opacity: 1;
+}
+
+#toast-message {
+    position: fixed;
+    bottom: 150px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, bottom 0.5s;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+#toast-message.show {
+    opacity: 1;
+    visibility: visible;
+    bottom: 120px; /* Naik sedikit saat muncul */
+}
+
+/* --- 11. Media Queries (Mobile Responsiveness) --- */
+@media (max-width: 768px) {
+    /* Penyesuaian Font untuk layar menengah */
+    .font-great-vibes {
+        font-size: 2.8rem;
+    }
+    .font-cursive {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Section Padding Lebih Rapat di Mobile */
+    .section {
+        padding: 40px 15px;
+    }
+
+    /* Card Pasangan: Penuh lebar di layar kecil */
+    .card {
+        max-width: 100%; 
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+    }
+    
+    /* Countdown: Memastikan tetap rapi */
+    #countdown-timer {
+        max-width: 350px;
+        gap: 5px;
+    }
+    .time-box {
+        min-width: unset;
+        padding: 8px 3px;
+    }
+    .time-number {
+        font-size: 1.5rem;
+    }
+    .time-label {
+        font-size: 0.7rem;
+    }
+
+    /* Galeri Foto: Tinggi yang lebih dinamis */
+    .photo-slider-container {
+        height: 300px;
+    }
+
+    /* Gift Section: Kartu Bank tetap 1 kolom */
+    .bank-accounts-cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Navbar Bawah */
+    .bottom-nav-bar {
+        height: 55px;
+    }
+    .bottom-nav-bar .nav-item {
+        font-size: 0.65rem;
+    }
+    .bottom-nav-bar .nav-item i {
+        font-size: 1.1rem;
+    }
+}
+</style>
+</head>
+<body class="scroll-locked">
+
+    <div id="cover-page" class="template-cover-container">
+        <div class="template-cover-overlay"></div>
+        <div class="template-cover-content-wrapper">
+            <p style="color: white; font-size: 1.1rem;">Kepada Yth:</p>
+            <h3 class="template-cover-guest-name" id="guest-name-display"></h3>
+            
+            <h1 class="template-cover-title">{{nama_pria}} & {{nama_wanita}}</h1>
+            <p style="color: #E0E0E0; margin-bottom: 2rem;">{{tanggal_acara_baca}}</p>
+            
+            <button id="open-invitation-btn" class="cover-open-btn">
+                <i class="fas fa-envelope-open mr-2"></i> BUKA UNDANGAN
+            </button>
+        </div>
+    </div>
+
+    <div id="main-content">
+        
+        <section id="intro-section-id" class="section section-intro">
+            <div class="container section-intro-content">
+                <div class="intro-main" style="text-align: center;">
+                    <h1 class="title-wedding">Undangan Pernikahan</h1>
+                    <p style="color: #ccc; margin-top: 10px;">Dengan memohon rahmat dan ridho Allah SWT</p>
+                </div>
+                </div>
+        </section>
+
+        <section class="section section-couple" style="padding-top: 0;">
+            <div class="container" style="text-align: center;">
+                <div class="couple-details" style="max-width: 500px; margin: 0 auto;">
+                    <div class="couple-image-container">
+                        <img 
+                            src="{{cover}}"
+                            alt="Foto Pasangan" 
+                            style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); border: 2px solid var(--netflix-red);"
+                        >
+                    </div>
+                    <h4 class="couple-names font-great-vibes">{{nama_pria}} & {{nama_wanita}}</h4>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-detail" style="padding-top: 0;">
+            <div class="container detail-box">
+                <p class="quote-opening">
+                    Tanpa mengurangi rasa hormat, kami mengundang Anda untuk berkenan menghadiri acara pernikahan kami:
+                </p>
+
+                <div class="couple-cards">
+                    <div class="card groom-card animate-up" data-delay="0.0s">
+                        <div class="card-image-wrapper">
+                            <img src="{{foto_pria}}" alt="Foto Pria">
+                        </div>
+                        <p class="card-name">{{nama_pria_lengkap}}</p>
+                        <p style="font-size: 0.8rem;">Putra dari Bapak {{nama_bapak_pria}} & Ibu {{nama_ibu_pria}}</p>
+                    </div>
+                    
+                    <div class="card bride-card animate-up" data-delay="0.3s">
+                        <div class="card-image-wrapper">
+                            <img src="{{foto_wanita}}" alt="Foto Wanita">
+                        </div>
+                        <p class="card-name">{{nama_wanita_lengkap}}</p>
+                        <p style="font-size: 0.8rem;">Putri dari Bapak {{nama_bapak_wanita}} & Ibu {{nama_ibu_wanita}}</p>
+                    </div>
+                </div>
+
+                <p class="quote-closing">
+                    Segala sesuatu Kami ciptakan berpasang-pasangan agar kamu mengingat (kebesaran Allah).<br>
+                    <span class="font-quote" style="display: block; margin-top: 15px; font-style: italic; color: var(--netflix-red);">~ Al-Qur'an Adz-Dzariyat: 49</span>
+                </p>
+            </div>
+        </section>
+
+        <section id="event-section-id" class="section section-event">
+            <div class="container detail-box">
+                <p class="subtitle-top">OUR SPECIAL</p>
+                <h2 class="main-title font-cursive">Wedding Event</h2>
+
+                <div id="countdown-timer">
+                    <div class="time-box"><p id="days" class="time-number">00</p><p class="time-label">Hari</p></div>
+                    <div class="time-box"><p id="hours" class="time-number">00</p><p class="time-label">Jam</p></div>
+                    <div class="time-box"><p id="minutes" class="time-number">00</p><p class="time-label">Menit</p></div>
+                    <div class="time-box"><p id="seconds" class="time-number">00</p><p class="time-label">Detik</p></div>
+                </div>
+                
+                <p class="couple-date font-quote" style="font-size: 1.5rem;">{{tanggal_acara_baca}}</p>
+                
+                {{event_times}}
+                <i class="fas fa-map-marker-alt mr-2"></i> 
+                    <p class="event-location-address" style="margin-bottom: 10px;">
+                    <p style="font-size: 0.9rem; color:var(--text-dark)">{{lokasi_acara}}</p>
+                    
+                </p>
+                
+                <a href="{{maps_url}}" target="_blank" class="btn-maps-link">
+                    <i class="fas fa-route"></i> BUKA DI GOOGLE MAPS
+                </a>
+            </div>
+        </section>
+        <section id="gallery-section-id" class="section section-gallery" style="padding: 60px 0;">
+    <div class="container" style="text-align: center;">
+        <p class="subtitle-top">OUR SWEET MEMORY</p>
+        <h2 class="main-title font-cursive">Photo Gallery</h2>
+        
+        <div class="photo-slider-container">
+            
+            <div class="photo-slider">
+                
+                {{galeri}}
+                
+            </div>
+            
+            <button class="slider-nav prev-btn">&#10094;</button>
+            <button class="slider-nav next-btn">&#10095;</button>
+            
+        </div>
+        
+    </div>
+</section>
+        
+        <section id="gift-section-id" class="section section-gift">
+            <div class="container">
+                <p class="subtitle-top">WEDDING GIFT</p>
+                <h2 class="main-title font-cursive">Kirim Hadiah</h2>
+
+                <p class="gift-text" style="font-size: 1rem; color:var(--text-dark); margin-bottom: 30px; max-width: 600px; margin: 0 auto 30px;">
+                    Do'a restu dari Anda merupakan karunia yang sangat berarti. Jika Anda ingin memberikan hadiah, Anda dapat mengirimkannya melalui:
+                </p>
+
+                <div id="bank-accounts-cards" class="bank-accounts-cards">
+                  {{bank_details_table}} 
+                    </div>
+         <tbody>
+            
+            </tbody>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="comments-section-id" class="section section-comments">
+            <div class="container">
+                <p class="subtitle-top">UCAPAN & DO'A</p>
+                <h2 class="main-title font-cursive">Kirimkan Ucapan Terbaik</h2>
+                
+                <div class="detail-box" style="margin-bottom: 40px;">
+                    <form id="comment-form" onsubmit="submitComment(event)">
+                        <div class="form-group">
+                            <label for="comment-name-input">Nama Anda (Wajib):</label>
+                            <input 
+                                type="text" 
+                                id="comment-name-input" 
+                                class="form-control" 
+                                value="[Nama Tamu]"
+                                required
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="comment-message-input">Pesan Ucapan:</label>
+                            <textarea id="comment-message-input" placeholder="Tuliskan ucapan dan doa terbaik Anda..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Konfirmasi Kehadiran:</label>
+                            <div class="status-btn-group">
+                                <button type="button" id="status-yes" class="template-status-btn status-active" onclick="toggleStatus(this, 'yes')">
+                                    <i class="fas fa-check-circle"></i> Hadir
+                                </button>
+                                <button type="button" id="status-no" class="template-status-btn" onclick="toggleStatus(this, 'no')">
+                                    <i class="fas fa-times-circle"></i> Tidak Hadir
+                                </button>
+                            </div>
+                        </div>
+
+                        <button type="submit" id="submit-comment-btn" class="btn-submit">
+                            Kirim Ucapan
+                        </button>
+                    </form>
+                </div>
+                
+
+                
+        </section>
+                     <p class="subtitle-top">KOMENTAR TERBARU</p>
+<div class="comments-list-container">
+    {{comments}} 
+</div>
+
+
+
+        <!-- <div style="height: 60px;"></div>
+
+        <div class="bottom-nav-bar">
+            <a href="#intro-section-id" class="nav-item active" data-section="intro-section-id">
+                <i class="fas fa-heart"></i>
+                <span>Home</span>
+            </a>
+            <a href="#event-section-id" class="nav-item" data-section="event-section-id">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Event</span>
+            </a>
+            <a href="#gallery-section-id" class="nav-item" data-section="gallery-section-id">
+                <i class="fas fa-images"></i>
+                <span>Galeri</span>
+            </a>
+            <a href="#gift-section-id" class="nav-item" data-section="gift-section-id">
+                <i class="fas fa-gifts"></i>
+                <span>Kado</span>
+            </a>
+            <a href="#comments-section-id" class="nav-item" data-section="comments-section-id">
+                <i class="fas fa-comment-dots"></i>
+                <span>Ucapan</span>
+            </a>
+        </div> -->
+        
+    </div>
+    
+    <audio id="background-music" loop> 
+    <source src="{{music}}" type="audio/mpeg">  
+</audio>
+
+<div id="floating-music-toggle" onclick="toggleMusic()">
+    <i class="fas fa-volume-mute"></i> 
+</div>
+
+<div id="toast-message"></div>
+
+    <script>
+    
+        
+        // Data Pernikahan
+const WEDDING_DATE = new Date("{{tanggal_acara}}").getTime(); 
+const urlParams = new URLSearchParams(window.location.search);
+const guestNameParam = urlParams.get('to');
+const GUEST_NAME = guestNameParam ? decodeURIComponent(guestNameParam) : "{{nama_tamu}}";
+
+document.getElementById('guest-name-display').textContent = GUEST_NAME;
+document.getElementById('comment-name-input').value = GUEST_NAME;
+
+// --- Music Toggle Logic ---
+
+const music = document.getElementById('background-music');
+const floatingMusicToggle = document.getElementById('floating-music-toggle');
+const musicIconClass = 'fas fa-volume-up';
+const muteIconClass = 'fas fa-volume-mute';
+
+/** Function to update the floating music icon */
+function updateMusicIcon(isPlaying) {
+    if (floatingMusicToggle) {
+        const iconElement = floatingMusicToggle.querySelector('i');
+        
+        // Ikon Volume-Up hanya jika sedang diputar
+        const isVolumeOnDisplay = isPlaying; 
+        
+        if (iconElement) {
+            iconElement.className = isVolumeOnDisplay ? musicIconClass : muteIconClass;
+        }
+        
+        // Warna merah (aktif) jika sedang play
+        floatingMusicToggle.style.color = isPlaying ? 'var(--netflix-red)' : 'var(--netflix-grey)';
+        floatingMusicToggle.style.borderColor = isPlaying ? 'var(--netflix-red)' : 'var(--netflix-grey)';
+    }
+}
+
+
+/** Function to handle play/pause logic */
+window.toggleMusic = function() {
+    const isPlaying = !music.paused;
+
+    if (isPlaying) { 
+        // Jeda musik
+        music.pause();
+        localStorage.setItem('isMusicPlaying', 'false');
+        updateMusicIcon(false); 
+        // window.showToast("Musik Latar Dijeda", 'error');
+    } else { 
+        // Coba play (Klik pertama pengguna)
+        music.muted = false; // Pastikan tidak bisu
+        
+        music.play().then(() => {
+            
+            localStorage.setItem('isMusicPlaying', 'true');
+            updateMusicIcon(true); 
+            // window.showToast("Musik Latar Diputar", 'success');
+        }).catch(error => {
+        
+            console.log("Music play failed:", error);
+            localStorage.setItem('isMusicPlaying', 'false');
+            updateMusicIcon(false);
+            // window.showToast("Gagal memutar musik.", 'error');
+        });
+    }
+}
+
+
+document.getElementById('open-invitation-btn').addEventListener('click', function() {
+    const cover = document.getElementById('cover-page');
+    const mainContent = document.getElementById('main-content');
+    const body = document.body;
+
+    cover.style.opacity = '0';
+    mainContent.style.visibility = 'visible';
+    mainContent.style.opacity = '1';
+    floatingMusicToggle.classList.add('visible'); // Tampilkan tombol mengambang
+
+    setTimeout(() => {
+        cover.style.display = 'none';
+        body.classList.remove('scroll-locked');
+        initIntersectionObserver();
+    }, 1500); 
+    
+    // Logic untuk memutar musik saat undangan dibuka:
+    const wasPlaying = localStorage.getItem('isMusicPlaying') !== 'false';
+    if (wasPlaying) {
+         // Panggil play secara langsung untuk memulai musik, update icon akan mengikuti
+        music.play().then(() => {
+            updateMusicIcon(true);
+        }).catch(e => {
+            // Jika gagal (autoplay block), tetap tampilkan ikon mute
+            updateMusicIcon(false);
+            console.log("Autoplay blocked, user must click the floating button.");
+        });
+    } else {
+        updateMusicIcon(false); // Pastikan ikon tetap mute jika sebelumnya dimatikan
+    }
+
+    startCountdown();
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Pastikan status icon disetel berdasarkan Local Storage
+    updateMusicIcon(localStorage.getItem('isMusicPlaying') === 'true');
+});
+
+        /** Toggles the active status button for attendance confirmation. */
+        window.toggleStatus = function(clickedButton, status) {
+            const statusBtns = document.querySelectorAll('.template-status-btn');
+            statusBtns.forEach(btn => btn.classList.remove('status-active'));
+            clickedButton.classList.add('status-active');
+        }
+        
+        /** Displays a temporary notification message. */
+        window.showToast = function(message, type = 'success') {
+            const toast = document.getElementById('toast-message');
+            if (!toast) return;
+            
+            toast.textContent = message;
+            toast.className = ``; // Reset classes
+            toast.classList.add('show', type);
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000); 
+        }
+
+    
+window.submitComment = async function(event) {
+    event.preventDefault();
+
+    
+    const API_BASE_URL = 'https://puredayinvitation.com/api';
+
+    const nameInput = document.getElementById('comment-name-input');
+    const messageInput = document.getElementById('comment-message-input');
+    const attendingYes = document.getElementById('status-yes');
+    const submitBtn = document.getElementById('submit-comment-btn');
+
+    const name = nameInput.value.trim() || `Tamu (${userId ? userId.substring(0, 4) : 'Guest'})`;
+    const message = messageInput.value.trim();
+    const isAttending = attendingYes.classList.contains('status-active');
+    const willAttendStatus = isAttending ? "yes" : "no";
+    
+    if (!message) {
+        window.showToast("Pesan ucapan tidak boleh kosong.", "error");
+        return;
+    }
+
+    const invitationId = localStorage.getItem('invitationId'); 
+    if (!invitationId) {
+        console.error("invitationId not found in localStorage.");
+        window.showToast("gagal kirim pesan, silahkan refresh halaman", "error");
+        return;
+    }
+    
+    const newCommentPayload = {
+        guest_name: name,
+        message: message,
+        will_attend: willAttendStatus,
+        invitation_id: invitationId,
+    };
+
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+
+    try {
+        // PERUBAHAN KRUSIAL ADA DI SINI: Menggunakan URL Absolut
+        const response = await fetch(`${API_BASE_URL}/comments`, { 
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newCommentPayload)
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json().catch(() => ({}));
+            throw new Error(errorData.message || `API call failed with status ${response.status}`);
+        }
+
+        window.showToast("Ucapan Anda berhasil terkirim! Terima kasih.", "success");
+        
+        // Reset form
+        nameInput.value = '';
+        messageInput.value = '';
+        document.getElementById('status-no').classList.add('status-active');
+        attendingYes.classList.remove('status-active');
+
+    } catch (e) {
+        console.error("Error submitting comment: ", e);
+        window.showToast("Gagal mengirim ucapan. Coba lagi. " + (e.message || ''), "error");
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Kirim Ucapan';
+    }
+}
+        // --- End Guestbook Logic ---
+
+        /** Copies text from a specific ID to the clipboard. */
+        window.copyText = function(elementId, bankName = '') {
+            const element = document.getElementById(elementId);
+            if (!element) {
+                 window.showToast('Gagal menyalin.', "error");
+                 return;
+            }
+            
+            const textToCopy = element.innerText;
+            
+            // Simplified copy logic for modern browsers
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                window.showToast(`Data berhasil disalin! silahkan cek`, "success");
+            }).catch(err => {
+                // Fallback for older browsers
+                const tempInput = document.createElement('textarea');
+                tempInput.value = textToCopy;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                try {
+                    document.execCommand('copy');
+                     window.showToast(`Nomor rekening ${bankName} berhasil disalin (fallback)!`, "success");
+                } catch (e) {
+                     window.showToast('Gagal menyalin. Silakan salin manual.', "error");
+                }
+                document.body.removeChild(tempInput);
+            });
+        }
+
+        // --- Core Application Logic ---
+
+        /** Handles the cover page opening transition. */
+        document.getElementById('open-invitation-btn').addEventListener('click', function() {
+            const cover = document.getElementById('cover-page');
+            const mainContent = document.getElementById('main-content');
+            const body = document.body;
+
+            // 1. Start Fade-out
+            cover.style.opacity = '0';
+            
+            // 2. Start Main Content Fade-in (make it visible before fade-in)
+            mainContent.style.visibility = 'visible';
+            mainContent.style.opacity = '1';
+
+            setTimeout(() => {
+           
+                cover.style.display = 'none';
+                body.classList.remove('scroll-locked');
+                
+        
+                initIntersectionObserver();
+            }, 1500); 
+            
+
+            startCountdown();
+        });
+
+        /** Countdown Timer Logic */
+        function startCountdown() {
+            const elements = ['days', 'hours', 'minutes', 'seconds'].map(id => document.getElementById(id));
+            const [daysEl, hoursEl, minutesEl, secondsEl] = elements;
+
+            const updateCountdown = () => {
+                const now = new Date().getTime();
+                const distance = WEDDING_DATE - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                if (distance < 0) {
+                    clearInterval(interval);
+                    document.getElementById('countdown-timer').innerHTML = '<h2 style="color: var(--netflix-red);">ACARA SEDANG BERLANGSUNG!</h2>';
+                } else {
+                    daysEl.textContent = String(days).padStart(2, '0');
+                    hoursEl.textContent = String(hours).padStart(2, '0');
+                    minutesEl.textContent = String(minutes).padStart(2, '0');
+                    secondsEl.textContent = String(seconds).padStart(2, '0');
+                }
+            }
+
+            updateCountdown();
+            const interval = setInterval(updateCountdown, 1000);
+        }
+        
+        /** Intersection Observer for scroll-based animations (for couple cards) */
+        function initIntersectionObserver() {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const element = entry.target;
+                        const delay = parseFloat(element.getAttribute('data-delay') || '0');
+                        
+                        element.classList.add('animated');
+                        element.style.transitionDelay = delay + 's'; // Use transition-delay with CSS transition
+                        
+                        observer.unobserve(element);
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2
+            });
+
+            document.querySelectorAll('.card.animate-up').forEach(card => {
+                observer.observe(card);
+            });
+        }
+                document.querySelectorAll('.nav-item').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+                this.classList.add('active');
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        
+        // Update Nav Active state on scroll
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
+            document.querySelectorAll('.section').forEach(section => {
+                if (section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
+                    const id = section.getAttribute('id');
+                    document.querySelectorAll('.nav-item').forEach(nav => {
+                        nav.classList.remove('active');
+                        if (nav.getAttribute('href') === `#${id}`) {
+                            nav.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // --- 1. Ambil elemen slider yang akan dimanipulasi ---
+    const sliderContainer = document.querySelector('.photo-slider');
+    const sliderWrapper = document.querySelector('.photo-slider-container'); // Ambil container utama untuk fitur hover
+    const slides = document.querySelectorAll('.slider-item');
+    const nextButton = document.querySelector('.next-btn');
+    const prevButton = document.querySelector('.prev-btn');
+
+    if (!sliderContainer || slides.length === 0 || !sliderWrapper) {
+        console.error("Slider container atau slide tidak ditemukan.");
+        return; 
+    }
+
+    let currentSlide = 0; 
+    const totalSlides = slides.length;
+    const intervalTime = 5000; // 5000 ms = 5 detik (Atur kecepatan di sini)
+    let slideInterval; 
+
+    
+    // --- 2. Fungsi untuk menampilkan slide tertentu ---
+    function showSlide(index) {
+        // Logika Looping
+        if (index >= totalSlides) {
+            index = 0; 
+        } else if (index < 0) {
+            index = totalSlides - 1; 
+        }
+
+        currentSlide = index;
+
+        // Transformasi CSS (Geser)
+        const offset = -currentSlide * 100;
+        sliderContainer.style.transform = `translateX(${offset}%)`;
+    }
+
+    // --- 3. Fungsi untuk pindah ke slide berikutnya/sebelumnya ---
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+    
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+
+    // ----------------------------------------------------
+    // --- 5. FUNGSI AUTOPLAY (OTOMATIS) ---
+    // ----------------------------------------------------
+    
+    // Fungsi untuk memulai interval otomatis
+    function startAutoplay() {
+        // Hentikan interval lama jika ada
+        clearInterval(slideInterval); 
+        // Mulai interval baru
+        slideInterval = setInterval(nextSlide, intervalTime);
+    }
+
+    // Fungsi untuk menghentikan interval otomatis
+    function stopAutoplay() {
+        clearInterval(slideInterval);
+    }
+
+
+    // --- 4. Hubungkan Interaksi Pengguna & Tombol Navigasi ---
+    
+    // Tombol Next
+    if (nextButton) {
+        nextButton.addEventListener('click', () => {
+            stopAutoplay(); // Hentikan autoplay saat user klik
+            nextSlide();
+            startAutoplay(); // Mulai lagi setelah klik
+        });
+    }
+    
+    // Tombol Prev
+    if (prevButton) {
+        prevButton.addEventListener('click', () => {
+            stopAutoplay(); // Hentikan autoplay saat user klik
+            prevSlide();
+            startAutoplay(); // Mulai lagi setelah klik
+        });
+    }
+
+    // Jeda Autoplay saat kursor berada di atas slider (user sedang melihat)
+    sliderWrapper.addEventListener('mouseenter', stopAutoplay);
+    // Lanjutkan Autoplay saat kursor meninggalkan slider
+    sliderWrapper.addEventListener('mouseleave', startAutoplay);
+
+
+    // --- 6. Inisiasi (Jalankan pertama kali) ---
+    showSlide(currentSlide); 
+    startAutoplay(); // **MULAI** Autoplay saat halaman dimuat
+});
+
+</script>
+</body>
+</html>
