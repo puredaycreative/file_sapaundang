@@ -474,6 +474,9 @@
     width: 100%;
     overflow: hidden;
     z-index: 1000;
+     margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 450px !important; 
 }
 
 /* Background utama yang akan ditarik ke atas */
@@ -488,6 +491,7 @@
     background-position: center;
     transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
     z-index: 1;
+    
 }
 
 /* Class untuk menarik background ke atas */
@@ -618,8 +622,10 @@
 
 
 /* Logic untuk posisi Landscape agar tetap di tengah seperti layar HP */
+/* Gabungkan semua section dalam satu blok agar rapi */
 @media (min-aspect-ratio: 1/1) {
-   .template-cover-container, .section-intro, 
+    .template-cover-container, 
+    .section-intro, 
     .section-detail,
     .section-event-timer,
     .section-event,
@@ -628,16 +634,15 @@
     .section-gift,
     .section-comments,
     .section-comments-list,
-    .section-closing
-
-     {
-        width: 100%;
-    max-width: 450px; /* Ukuran standar HP agar ramping */
-    margin-left: auto !important;
-    margin-right: auto !important;
-    position: relative;
-    box-sizing: border-box;
-        box-shadow: 0 0 100px rgba(0,0,0,0.5); /* Efek bayangan di kanan kiri */
+    .section-closing {
+        position: relative;
+        width: 100% !important;
+        max-width: 450px !important; /* Ukuran standar HP */
+        margin-left: auto !important;
+        margin-right: auto !important;
+        position: relative !important;
+        box-sizing: border-box !important;
+        box-shadow: 0 0 100px rgba(0,0,0,0.5);
     }
 }
 
@@ -645,13 +650,6 @@
 
 
 
-/* --- 1. Background Utama (Statis) --- */
-/* Pengaturan Global */
-body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-}
 
 /* Background Utama */
 body::before {
@@ -678,10 +676,9 @@ body {
 
 /* --- 2. Transparansi Section --- */
 
-
 .section-detail,
 .section-event,
-.section-gif{
+.section-gift{
     position: relative;
     width: 100%;
     /* Ubah 0.85 menjadi 0.4 agar BG di belakang lebih jelas */
@@ -691,27 +688,8 @@ body {
     background-image: none !important; 
 }
 
-/* --- 3. Mode Landscape (F12 Fix) --- */
-@media (min-aspect-ratio: 1/1) {
-    body {
-        /* Memastikan BG tetap di tengah layout 450px saat landscape */
-        background-size: 450px 100%;
-          margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    overflow-x: hidden !important;
-    /* background-color: #1e1e1e; */
-    }
 
-    .section-intro, 
-    .section-detail,
-    .section-event,
-    .section-gift {
-        max-width: 450px;
-        margin: 0 auto !important;
-    }
-}
+
 
 
 
@@ -1403,10 +1381,15 @@ body {
 /* 2. CONTAINER GALLERY */
 /* --- Container Galeri --- */
 .section-gallery {
+      max-width: 450px !important; 
     padding: 60px 15px;
    background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg2.jpg");
     background-size: cover;
-    min-height: 80vh;
+    background-position: center;
+     margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 450px !important; 
+  
 }
 /* --- PAKSA DUA KOLOM --- */
 .scrapbook-wrapper {
@@ -1887,6 +1870,9 @@ max-width: 450px;
 
 /* 2. CONTAINER UTAMA */
 #comments-section-id.section-comments {
+     margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 450px !important; 
     position: relative;
     min-height: 100vh;
     margin-left: auto;
@@ -2046,6 +2032,9 @@ max-width: 450px;
 
 /* --- 1. SECTION UTAMA --- */
 #comments-list-section.section-comments-list {
+     margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 450px !important; 
     position: relative;
     min-height: 100vh;
     margin-left: auto;
@@ -2180,6 +2169,9 @@ background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg.jpg
 
 /* Styling Section Penutup */
 .section-closing {
+     margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 450px !important; 
     padding: 60px 0px;
    background-image: url("https://file.sapaundang.my.id/templates-more/cream/bg2.jpg");
    background-size: cover;
