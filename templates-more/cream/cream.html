@@ -2899,6 +2899,51 @@ document.addEventListener("DOMContentLoaded", function() {
 
 (function() {
     try {
+        function cekcoverdepan() {
+            // Mengambil semua kartu pengantin (Pria & Wanita)
+            var cards = document.querySelectorAll('.couple-cards .card');
+
+            cards.forEach(function(card) {
+                var img = card.querySelector('.couple-img');
+                var wrapper = card.querySelector('.card-image-wrapper-cover');
+
+                if (img && wrapper) {
+                    // Ambil isi dari src gambar, ubah ke huruf kecil semua agar aman
+                    var src = (img.getAttribute('src') || '').trim().toLowerCase();
+
+                    // SYARAT MATI (Dihilangkan tanpa sisa jarak):
+                    // 1. Jika src kosong ("")
+                    // 2. Jika src berisi teks "null"
+                    // 3. Jika src masih berupa kode template mentah {{foto_...}}
+                    if (src === "" || src === "null" || src.includes('{{cover')) {
+                        
+                        // Hilangkan pembungkus fotonya total agar teks di bawahnya langsung naik
+                        wrapper.style.setProperty('display', 'none', 'important');
+                        console.log("Detail Section: Foto berstatus null/kosong. Jarak dihilangkan.");
+                        
+                    } else {
+                        // Jika ada foto asli, biarkan tampil normal
+                        wrapper.style.setProperty('display', 'block', 'important');
+                    }
+                }
+            });
+        }
+
+        // Jalankan pengecekan saat halaman selesai dimuat
+        window.addEventListener('load', cekcoverdepan);
+
+        // Cadangan: Jalankan ulang jika sistem render web Anda butuh waktu proses
+        setTimeout(cekcoverdepan, 1000);
+        setTimeout(cekcoverdepan, 2500);
+
+    } catch (e) {
+        console.error("Detail Foto Script Error: ", e);
+    }
+})();
+
+
+(function() {
+    try {
         function cekFotoPengantin() {
             // Mengambil semua kartu pengantin (Pria & Wanita)
             var cards = document.querySelectorAll('.couple-cards .card');
