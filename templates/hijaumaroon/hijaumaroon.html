@@ -116,20 +116,36 @@
 
 
     /* --- Tipografi --- */
+
+
 .subtitle-top {
     font-size: 0.75rem;
     letter-spacing: 3px;
     color: #733936;
     text-transform: uppercase;
-     text-align: center;
+    text-align: center;
+    
+    /* Garis tepi luar menggunakan shadow, warna merah dijamin aman */
+    text-shadow: 
+        -1px -1px 0 #fff,  
+         1px -1px 0 #fff,
+        -1px  1px 0 #fff,
+         1px  1px 0 #fff;
 }
 
 .main-title {
-      font-family: 'Bilbo Swash Caps', cursive;
+    font-family: 'Bilbo Swash Caps', cursive;
     font-size: 2.4rem;
     color: #733936;
     margin: 10px 0 20px;
-     text-align: center;
+    text-align: center;
+    
+    /* Garis tepi luar menggunakan shadow, warna merah dijamin aman */
+    text-shadow: 
+        -1px -1px 0 #fff,  
+         1px -1px 0 #fff,
+        -1px  1px 0 #fff,
+         1px  1px 0 #fff;
 }
 
 /* --- Tipografi --- */
@@ -484,7 +500,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("https://file.sapaundang.my.id/templates/hijaumaroon/cover.jpg");
+    background-image: url("https://file.sapaundang.my.id/templates/hijaumaroon/cover2.jpg");
     background-size: cover;
     background-position: center;
     transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
@@ -603,7 +619,7 @@
 
 .cover-open-btn:hover {
     transform: translateY(-3px) scale(1.05);
-    background-color: #954f6c;
+    background-color: #ac5a56;
 }
 
 
@@ -654,7 +670,7 @@ body::before {
     width: 100%;
     height: 100%;
     max-width: 450px; /* Lebar maksimal mengikuti layout undangan */
-    background-image: url("https://file.sapaundang.my.id/templates/hijaumaroon/bg.jpg") !important;
+    background-image: url("https://file.sapaundang.my.id/templates/hijaumaroon/bgall.jpg") !important;
     background-attachment: scroll; /* Tetap scroll karena container-nya sudah fixed */
     background-position: center;
     background-repeat: no-repeat;
@@ -1003,7 +1019,7 @@ body {
     min-height: 100vh;
     /* KUNCI TENGAH: margin auto kiri dan kanan */
     margin: 0 auto; 
-     background-image: url("https://file.sapaundang.my.id/templates/hijaumaroon/bg.jpg");
+     background-image: url("https://file.sapaundang.my.id/templates/hijaumaroon/bgall.jpg");
     box-shadow: 0 0 30px rgba(0,0,0,0.1);
     overflow: hidden;
     padding: 80px 20px;
@@ -1032,7 +1048,7 @@ body {
 .time-box {
     width: 75px;
     height: 75px;
-    background: rgba(255, 255, 255, 0.2); /* Memberikan sedikit kontras transparan */
+    background: rgba(255, 255, 255, 0.868); /* Memberikan sedikit kontras transparan */
     border: 1px dashed #733936;
     border-radius: 50%; 
     display: flex;
@@ -1169,7 +1185,7 @@ body {
 
 .btn-maps-link:hover {
     transform: translateY(-3px) scale(1.05);
-    background-color: #954f6c;
+    background-color: #ac5a56;
     color: #dee6ee;
 }
 
@@ -1365,7 +1381,7 @@ body {
 /* --- Container Galeri --- */
 .section-gallery {
     padding: 60px 15px;
-   background-image: url("https://file.sapaundang.my.id/templates/hijaumaroon/bg.jpg");
+   background-image: url("https://file.sapaundang.my.id/templates/hijaumaroon/bgall.jpg");
     background-size: cover;
  background-position: center; /* Tambahkan ini */
     background-repeat: no-repeat;
@@ -1938,7 +1954,7 @@ max-width: 450px;
     padding: 10px;
     border: none;
     border-radius: 8px;
-    background: #954f6c;
+    background: #ac5a56;
     color: rgb(255, 255, 255);
     cursor: pointer;
     font-size: 0.85rem;
@@ -1978,7 +1994,7 @@ max-width: 450px;
 }
 
 .btn-submit:hover {
-    background-color: #954f6c;
+    background-color: #ac5a56;
     transform: translateY(-2px);
 }
 
@@ -2017,7 +2033,7 @@ max-width: 450px;
     margin-left: auto;
     margin-right: 0;
      background-size: cover;
-background-image: url("https://file.sapaundang.my.id/templates/hijaumaroon/bg.jpg");
+background-image: url("https://file.sapaundang.my.id/templates/hijaumaroon/bgall.jpg");
     overflow: hidden; 
     padding: 80px 20px 0 20px;
     box-sizing: border-box;
